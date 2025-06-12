@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-time-picker',
@@ -8,11 +8,22 @@ import { Component, Input, signal } from '@angular/core';
   templateUrl: './time-picker.component.html',
 })
 export class TimePickerComponent {
-  time = signal('');
+  private _time = signal('');
+
+  @Input() set value(val: string) {
+    this._time.set(val);
+  }
+  get value() {
+    return this._time();
+  }
+
+  @Output() valueChange = new EventEmitter<string>();
   @Input() customClass: string | string[] = '';
 
   updateTime(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.time.set(input.value);
+    const val = input.value;
+    this._time.set(val);
+    this.valueChange.emit(val);
   }
 }

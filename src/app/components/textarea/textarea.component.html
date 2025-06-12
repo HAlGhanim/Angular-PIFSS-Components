@@ -1,8 +1,8 @@
 <label class="block text-sm font-medium mb-1">{{ label }}</label>
 <textarea
   [placeholder]="placeholder"
+  [value]="value"
   (input)="updateValue($event)"
   class="px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
   [ngClass]="customClass"
-  >{{ value() }}</textarea
->
+></textarea>

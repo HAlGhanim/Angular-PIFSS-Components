@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-date-picker',
@@ -8,11 +8,22 @@ import { Component, Input, signal } from '@angular/core';
   templateUrl: './date-picker.component.html',
 })
 export class DatePickerComponent {
-  date = signal('');
+  private _date = signal('');
+
+  @Input() set value(val: string) {
+    this._date.set(val);
+  }
+  get value() {
+    return this._date();
+  }
+
+  @Output() valueChange = new EventEmitter<string>();
   @Input() customClass: string | string[] = '';
 
   updateDate(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.date.set(input.value);
+    const val = input.value;
+    this._date.set(val);
+    this.valueChange.emit(val);
   }
 }

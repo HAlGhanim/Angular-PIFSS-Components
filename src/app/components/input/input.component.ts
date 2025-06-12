@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -11,36 +11,43 @@ export class InputComponent {
   private _label = signal('');
   private _placeholder = signal('');
   private _type = signal<'text' | 'email' | 'password' | 'number'>('text');
+  private _value = signal('');
 
-  @Input() customClass: string | string[] = '';
-  @Input()
-  set label(value: string) {
-    this._label.set(value);
+  @Input() set label(val: string) {
+    this._label.set(val);
   }
   get label() {
     return this._label();
   }
 
-  @Input()
-  set placeholder(value: string) {
-    this._placeholder.set(value);
+  @Input() set placeholder(val: string) {
+    this._placeholder.set(val);
   }
   get placeholder() {
     return this._placeholder();
   }
 
-  @Input()
-  set type(value: 'text' | 'email' | 'password' | 'number') {
-    this._type.set(value);
+  @Input() set type(val: 'text' | 'email' | 'password' | 'number') {
+    this._type.set(val);
   }
   get type() {
     return this._type();
   }
 
-  value = signal('');
+  @Input() set value(val: string) {
+    this._value.set(val);
+  }
+  get value() {
+    return this._value();
+  }
+
+  @Output() valueChange = new EventEmitter<string>();
+  @Input() customClass: string | string[] = '';
 
   updateValue(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.value.set(input.value);
+    const val = input.value;
+    this._value.set(val);
+    this.valueChange.emit(val);
   }
 }

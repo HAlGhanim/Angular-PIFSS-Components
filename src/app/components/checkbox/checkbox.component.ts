@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -9,7 +9,8 @@ import { Component, Input, signal } from '@angular/core';
 })
 export class CheckboxComponent {
   private _label = signal('');
-  @Input() customClass: string | string[] = '';
+  private _checked = signal(false);
+
   @Input() set label(value: string) {
     this._label.set(value);
   }
@@ -17,9 +18,21 @@ export class CheckboxComponent {
     return this._label();
   }
 
-  checked = signal(false);
+  @Input() set checked(val: boolean) {
+    this._checked.set(val);
+  }
+  get checked() {
+    return this._checked();
+  }
+
+  @Output() checkedChange = new EventEmitter<boolean>();
+  @Input() customClass: string | string[] = '';
 
   toggle() {
-    this.checked.update((value) => !value);
+    this._checked.update((val) => {
+      const newVal = !val;
+      this.checkedChange.emit(newVal);
+      return newVal;
+    });
   }
 }

@@ -5,29 +5,55 @@
     label="Name"
     type="text"
     placeholder="Enter name"
+    [value]="name"
+    (valueChange)="name = $event"
     customClass="w-48"
   ></app-input>
+
   <app-input
     label="Email"
     type="email"
     placeholder="Enter email"
+    [value]="email"
+    (valueChange)="email = $event"
     customClass="w-48"
   ></app-input>
+
   <app-textarea
-    label="Bio"
-    placeholder="Enter your bio..."
-    customClass="w-64"
+    label="Comment"
+    placeholder="Write here..."
+    [value]="comment"
+    (valueChange)="comment = $event"
+    customClass="w-96"
   ></app-textarea>
 
   <app-dropdown
     label="Choose an option"
     [options]="dropdownOptions"
+    [value]="selectedOption"
+    (valueChange)="selectedOption = $event"
     customClass="w-64"
   ></app-dropdown>
-  <app-radio [options]="radioOptions"></app-radio>
+
+  <app-radio
+    [options]="radioOptions"
+    [value]="selectedRadio"
+    (valueChange)="selectedRadio = $event"
+    customClass="w-64"
+  ></app-radio>
+
   <div class="flex w-full justify-around p-4">
-    <app-checkbox label="Accept Terms"></app-checkbox>
-    <app-toggle></app-toggle>
+    <app-checkbox
+      label="Accept Terms"
+      [checked]="acceptedTerms"
+      (checkedChange)="acceptedTerms = $event"
+    ></app-checkbox>
+
+    <app-toggle
+      [enabled]="toggleEnabled"
+      (enabledChange)="toggleEnabled = $event"
+    ></app-toggle>
+
     <app-date-picker customClass="w-64"></app-date-picker>
     <app-time-picker customClass="w-48"></app-time-picker>
   </div>
@@ -37,6 +63,7 @@
     [rows]="tableRows"
     customClass="min-w-full mb-6"
   ></app-table>
+
   <app-grid [items]="gridItems"></app-grid>
 
   <app-card title="Card Title">

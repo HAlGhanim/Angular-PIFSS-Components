@@ -37,13 +37,25 @@ import {
 })
 export class AppComponent {
   title = 'pifss-angular-components';
+
+  name = '';
+  email = '';
+  comment = '';
+  selectedOption = '';
+  selectedRadio = '';
+
+  acceptedTerms = false;
+  toggleEnabled = false;
+
   dropdownOptions = ['Option 1', 'Option 2', 'Option 3'];
   radioOptions = ['Male', 'Female'];
+
   tableHeaders = ['Name', 'Age', 'Role'];
   tableRows = [
     ['Alice', '30', 'Developer'],
     ['Bob', '25', 'Designer'],
     ['Charlie', '35', 'Manager'],
   ];
+
   gridItems = ['Box 1', 'Box 2', 'Box 3', 'Box 4'];
 }
