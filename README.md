@@ -2,7 +2,7 @@
 
 This project contains a modern Angular 17 component library built with Tailwind CSS. All components are **standalone**, **signal-based**, and **lightweight**, offering flexibility and reactive state management for your UI needs.
 
-## 📦 Installation
+## Installation
 
 1. Clone the repo:
 
@@ -25,9 +25,9 @@ ng serve
 
 ---
 
-## ✅ Usage Examples
+## Usage Examples
 
-### 🔤 Input
+### Input
 
 **app.component.ts**
 
@@ -43,7 +43,7 @@ name = "";
 
 ---
 
-### 📝 Textarea
+### Textarea
 
 **app.component.ts**
 
@@ -59,7 +59,7 @@ comment = "";
 
 ---
 
-### 🔽 Dropdown
+### Dropdown
 
 **app.component.ts**
 
@@ -76,7 +76,7 @@ selectedOption = "";
 
 ---
 
-### 🔘 Radio Group
+### Radio Group
 
 **app.component.ts**
 
@@ -93,7 +93,7 @@ gender = "";
 
 ---
 
-### ☑ Checkbox
+### Checkbox
 
 **app.component.ts**
 
@@ -109,7 +109,7 @@ accepted = false;
 
 ---
 
-### 🔁 Toggle
+### Toggle
 
 **app.component.ts**
 
@@ -125,7 +125,7 @@ notifications = false;
 
 ---
 
-### 🗓 Date Picker
+### Date Picker
 
 **app.component.ts**
 
@@ -141,7 +141,7 @@ dob = "";
 
 ---
 
-### 🕒 Time Picker
+### Time Picker
 
 **app.component.ts**
 
@@ -157,7 +157,7 @@ startTime = "";
 
 ---
 
-### 📊 Table
+### Data Table
 
 **app.component.ts**
 
@@ -177,7 +177,7 @@ tableRows = [
 
 ---
 
-### 🧱 Grid
+### Grid
 
 **app.component.ts**
 
@@ -193,7 +193,7 @@ gridItems = ["Card 1", "Card 2", "Card 3"];
 
 ---
 
-### 💳 Card
+### Card
 
 ```html
 <app-card title="Dashboard">
@@ -203,7 +203,7 @@ gridItems = ["Card 1", "Card 2", "Card 3"];
 
 ---
 
-### 🔘 Button
+### Button
 
 ```html
 <app-button label="Submit" type="button" />
