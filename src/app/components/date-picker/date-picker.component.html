@@ -1,1 +1,7 @@
-<p>date-picker works!</p>
+<input
+  type="date"
+  [value]="date()"
+  (input)="updateDate($event)"
+  class="px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+  [ngClass]="customClass"
+/>

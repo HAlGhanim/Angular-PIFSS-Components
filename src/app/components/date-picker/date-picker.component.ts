@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-date-picker',
   standalone: true,
-  imports: [],
-  templateUrl: './date-picker.component.html'
+  imports: [CommonModule],
+  templateUrl: './date-picker.component.html',
 })
 export class DatePickerComponent {
+  date = signal('');
+  @Input() customClass: string | string[] = '';
 
+  updateDate(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.date.set(input.value);
+  }
 }

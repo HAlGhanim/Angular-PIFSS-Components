@@ -1,1 +1,10 @@
-<p>checkbox works!</p>
+<label class="inline-flex items-center">
+  <input
+    type="checkbox"
+    [checked]="checked()"
+    (change)="toggle()"
+    class="mr-2"
+    [ngClass]="customClass"
+  />
+  <span>{{ label }}</span>
+</label>

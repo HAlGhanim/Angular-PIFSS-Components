@@ -1,1 +1,10 @@
-<p>navbar works!</p>
+<nav
+  class="w-full shadow p-4 flex justify-between items-center"
+  [ngClass]="customClass"
+>
+  <div class="space-x-4" [ngClass]="customClass">
+    <a href="#" class="hover:text-blue-500">Home</a>
+    <a href="#" class="hover:text-blue-500">About</a>
+    <a href="#" class="hover:text-blue-500">Contact</a>
+  </div>
+</nav>

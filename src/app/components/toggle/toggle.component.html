@@ -1,1 +1,18 @@
-<p>toggle works!</p>
+<label class="inline-flex items-center cursor-pointer" [ngClass]="customClass">
+  <input
+    type="checkbox"
+    class="sr-only"
+    [checked]="enabled()"
+    (change)="toggle()"
+    [ngClass]="customClass"
+  />
+  <div class="relative">
+    <div class="block w-10 h-6 bg-gray-300 rounded-full"></div>
+    <div
+      class="dot absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition"
+      [class.translate-x-full]="enabled()"
+      [class.bg-green-500]="enabled()"
+    ></div>
+  </div>
+  <span class="ml-3 text-sm">{{ enabled() ? "On" : "Off" }}</span>
+</label>

@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
-  templateUrl: './navbar.component.html'
+  imports: [CommonModule],
+  templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-
+  @Input() customClass: string | string[] = '';
 }
