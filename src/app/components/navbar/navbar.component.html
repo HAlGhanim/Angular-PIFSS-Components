@@ -2,8 +2,6 @@
   class="w-full shadow p-4 flex justify-between items-center"
   [ngClass]="customClass"
 >
-  <app-pifss-logo class="fill-primary"></app-pifss-logo>
-
   <div class="space-x-4" [ngClass]="customClass">
     <a
       *ngFor="let link of links; trackBy: trackByLabel"
@@ -13,4 +11,7 @@
       {{ link.label }}
     </a>
   </div>
+  <!-- <app-pifss-logo />
+  <app-pifss-logo-v /> -->
+  <app-pifss-logo-h />
 </nav>
