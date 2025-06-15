@@ -1,210 +1,56 @@
-# Angular PIFSS UI Components
+# Project Overview
 
-This project contains a modern Angular 17 component library built with Tailwind CSS. All components are **standalone**, **signal-based**, and **lightweight**, offering flexibility and reactive state management for your UI needs.
+This project was generated using the **Angular CLI** with **standalone components** and **Tailwind CSS** integration. It offers a modular architecture with reusable components and support for both RTL and LTR layouts.
 
-## Installation
+## Folder Structure
 
-1. Clone the repo:
+### `src/`
 
-```bash
-git clone https://github.com/HAlGhanim/Angular-PIFSS-Components.git
-cd Angular-PIFSS-Components
-```
+- `main.ts`: Application entry point.
+- `app.config.ts`: App bootstrap configuration (if used).
 
-2. Install dependencies:
+#### `src/assets/`
 
-```bash
-npm install
-```
+- Fonts organized under:
+  - `Arabic/`, `English/`
+- Raw SVG files:
+  - `pifss-logo.svg`, `pifss-logo-h.svg`, `pifss-logo-v.svg`
 
-3. Run the app to test all components:
+#### `src/app/components/icons/`
 
-```bash
-ng serve
-```
+- Angular standalone components that wrap and render the SVGs as inline `<svg>` elements:
+  - `pifss-logo.component.ts`
+  - `pifss-logo-h.component.ts`
+  - `pifss-logo-v.component.ts`
 
----
+#### `src/app/components/`
 
-## Usage Examples
+- Standalone UI components like:
+  - `button/`, `card/`, `input/`, `toggle/`, `navbar/`, etc.
 
-### Input
+#### `src/app/pages/`
 
-**app.component.ts**
+- Route-level test pages:
+  - `home/`, `about/`, `contact/`, `arabic-home/`, etc.
 
-```ts
-name = "";
-```
+#### `style.css`
 
-**app.component.html**
+- Tailwind-based global styles and component-specific CSS.
 
-```html
-<app-input label="Name" type="text" [value]="name" (valueChange)="name = $event" customClass="w-64" />
-```
+## Getting Started
 
----
+1. **Clone the repository**
 
-### Textarea
+2. **Install dependencies**:
 
-**app.component.ts**
+   ```bash
+   npm install
+   ```
 
-```ts
-comment = "";
-```
+3. **Start the development server**:
 
-**app.component.html**
+   ```bash
+   ng serve
+   ```
 
-```html
-<app-textarea label="Comment" placeholder="Write here..." [value]="comment" (valueChange)="comment = $event" customClass="w-96" />
-```
-
----
-
-### Dropdown
-
-**app.component.ts**
-
-```ts
-dropdownOptions = ["One", "Two", "Three"];
-selectedOption = "";
-```
-
-**app.component.html**
-
-```html
-<app-dropdown label="Select Option" [options]="dropdownOptions" [value]="selectedOption" (valueChange)="selectedOption = $event" customClass="w-64" />
-```
-
----
-
-### Radio Group
-
-**app.component.ts**
-
-```ts
-radioOptions = ["Male", "Female"];
-gender = "";
-```
-
-**app.component.html**
-
-```html
-<app-radio [options]="radioOptions" [value]="gender" (valueChange)="gender = $event" customClass="w-64" />
-```
-
----
-
-### Checkbox
-
-**app.component.ts**
-
-```ts
-accepted = false;
-```
-
-**app.component.html**
-
-```html
-<app-checkbox label="Accept Terms" [checked]="accepted" (checkedChange)="accepted = $event" />
-```
-
----
-
-### Toggle
-
-**app.component.ts**
-
-```ts
-notifications = false;
-```
-
-**app.component.html**
-
-```html
-<app-toggle [enabled]="notifications" (enabledChange)="notifications = $event" />
-```
-
----
-
-### Date Picker
-
-**app.component.ts**
-
-```ts
-dob = "";
-```
-
-**app.component.html**
-
-```html
-<app-date-picker [value]="dob" (valueChange)="dob = $event" />
-```
-
----
-
-### Time Picker
-
-**app.component.ts**
-
-```ts
-startTime = "";
-```
-
-**app.component.html**
-
-```html
-<app-time-picker [value]="startTime" (valueChange)="startTime = $event" />
-```
-
----
-
-### Data Table
-
-**app.component.ts**
-
-```ts
-tableHeaders = ["Name", "Age"];
-tableRows = [
-  ["Alice", "30"],
-  ["Bob", "25"],
-];
-```
-
-**app.component.html**
-
-```html
-<app-table [headers]="tableHeaders" [rows]="tableRows" />
-```
-
----
-
-### Grid
-
-**app.component.ts**
-
-```ts
-gridItems = ["Card 1", "Card 2", "Card 3"];
-```
-
-**app.component.html**
-
-```html
-<app-grid [items]="gridItems" />
-```
-
----
-
-### Card
-
-```html
-<app-card title="Dashboard">
-  <p>Welcome to the card content slot!</p>
-</app-card>
-```
-
----
-
-### Button
-
-```html
-<app-button label="Submit" type="button" />
-```
+4. Open your browser at [http://localhost:4200](http://localhost:4200)
