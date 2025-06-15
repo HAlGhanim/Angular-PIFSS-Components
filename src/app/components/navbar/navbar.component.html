@@ -2,9 +2,15 @@
   class="w-full shadow p-4 flex justify-between items-center"
   [ngClass]="customClass"
 >
+  <app-pifss-logo class="fill-primary"></app-pifss-logo>
+
   <div class="space-x-4" [ngClass]="customClass">
-    <a href="#" class="hover:text-blue-500">Home</a>
-    <a href="#" class="hover:text-blue-500">About</a>
-    <a href="#" class="hover:text-blue-500">Contact</a>
+    <a
+      *ngFor="let link of links; trackBy: trackByLabel"
+      [routerLink]="link.path"
+      class="hover:text-primary"
+    >
+      {{ link.label }}
+    </a>
   </div>
 </nav>

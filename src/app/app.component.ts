@@ -14,6 +14,11 @@ import {
   ToggleComponent,
   GridComponent,
 } from '../app/components';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ArabicHomeComponent } from './pages/arabic-home/arabic-home.component';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -31,6 +36,7 @@ import {
     TableComponent,
     ToggleComponent,
     GridComponent,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
