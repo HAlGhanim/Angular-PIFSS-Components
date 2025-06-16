@@ -4,11 +4,6 @@ This project was generated using the **Angular CLI** with **standalone component
 
 ## Folder Structure
 
-### `src/`
-
-- `main.ts`: Application entry point.
-- `app.config.ts`: App bootstrap configuration (if used).
-
 #### `src/assets/`
 
 - Fonts organized under:
