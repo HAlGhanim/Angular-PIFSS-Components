@@ -9,7 +9,7 @@ This project was generated using the **Angular CLI** with **standalone component
 - Copy and paste the styles.css into your project.
 - npm install then ng serve to see how the components in this repo look like.
 - if you want to turn it from ltr (english) to rtl (arabic) then in index.html give the html tage a property called dir="rtl".
-- ```html
+```html
 <html lang="ar" dir="rtl">
 ```
 
