@@ -1,16 +1,14 @@
-<nav
-  class="w-full shadow p-4 flex justify-between items-center"
-  [ngClass]="customClass"
->
-  <app-pifss-logo class="fill-primary"></app-pifss-logo>
-
-  <div class="space-x-4" [ngClass]="customClass">
+<nav class="w-full shadow p-4 flex justify-between items-center">
+  <div class="space-x-4">
+    @for (link of links; track link.label) {
     <a
-      *ngFor="let link of links; trackBy: trackByLabel"
       [routerLink]="link.path"
-      class="hover:text-primary"
+      routerLinkActive="text-blue-800 underline"
+      class="hover:text-primary transition-colors duration-200"
     >
       {{ link.label }}
     </a>
+    }
   </div>
+  <app-pifss-logo class="fill-primary"></app-pifss-logo>
 </nav>
