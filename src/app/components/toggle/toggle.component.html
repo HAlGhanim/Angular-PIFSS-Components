@@ -6,11 +6,16 @@
     (change)="toggle()"
   />
   <div class="relative">
-    <div class="block w-10 h-6 bg-gray-300 rounded-full"></div>
+    <!-- Track -->
+    <div
+      class="block w-10 h-6 rounded-full transition"
+      [ngClass]="enabled ? 'bg-primary' : 'bg-gray-300'"
+    ></div>
+
+    <!-- Thumb -->
     <div
       class="dot absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition"
       [class.translate-x-full]="enabled"
-      [class.bg-green-500]="enabled"
     ></div>
   </div>
   <span class="ml-3 text-sm">{{ enabled ? "On" : "Off" }}</span>

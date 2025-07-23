@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
 import {
-  InputComponent,
-  TextareaComponent,
-  DropdownComponent,
-  CheckboxComponent,
-  RadioComponent,
-  CardComponent,
   ButtonComponent,
-  NavbarComponent,
+  CardComponent,
+  CheckboxComponent,
   DatePickerComponent,
-  TimePickerComponent,
-  TableComponent,
-  ToggleComponent,
+  DropdownComponent,
   GridComponent,
+  InputComponent,
+  NavbarComponent,
+  RadioComponent,
+  TableComponent,
+  TextareaComponent,
+  TimePickerComponent,
+  ToggleComponent,
 } from '../app/components';
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { ArabicHomeComponent } from './pages/arabic-home/arabic-home.component';
 import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',

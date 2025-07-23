@@ -2,11 +2,19 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PifssLogoComponent } from '../icons/pifss-logo/pifss-logo.component';
+import { PifssLogoHComponent } from '../icons/pifss-logo-h/pifss-logo-h.component';
+import { PifssLogoVComponent } from '../icons/pifss-logo-v/pifss-logo-v.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, PifssLogoComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    PifssLogoComponent,
+    PifssLogoHComponent,
+    PifssLogoVComponent,
+  ],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {

@@ -1,210 +1,61 @@
-# Angular PIFSS UI Components
+# Project Overview
 
-This project contains a modern Angular 17 component library built with Tailwind CSS. All components are **standalone**, **signal-based**, and **lightweight**, offering flexibility and reactive state management for your UI needs.
+This project was generated using the **Angular CLI** with **standalone components** and **Tailwind CSS** integration. It offers a modular architecture with reusable components and support for both RTL and LTR layouts.
 
-## Installation
+## Folder Structure
 
-1. Clone the repo:
+#### `src/assets/`
 
-```bash
-git clone https://github.com/HAlGhanim/Angular-PIFSS-Components.git
-cd Angular-PIFSS-Components
-```
+- Fonts organized under:
+  - `Arabic/`, `English/`
+- Raw SVG files:
+  - `pifss-logo.svg`, `pifss-logo-h.svg`, `pifss-logo-v.svg`
 
-2. Install dependencies:
+#### `src/app/components/icons/`
 
-```bash
-npm install
-```
+- Angular standalone components that wrap and render the SVGs as inline `<svg>` elements:
+  - `pifss-logo.component.ts`
+  - `pifss-logo-h.component.ts`
+  - `pifss-logo-v.component.ts`
 
-3. Run the app to test all components:
+#### `src/app/components/`
 
-```bash
-ng serve
-```
+- Standalone UI components like:
+  - `button/`, `card/`, `input/`, `toggle/`, `navbar/`, etc.
 
----
+#### `src/app/pages/`
 
-## Usage Examples
+- Route-level test pages:
+  - `home/`, `about/`, `contact/`, `arabic-home/`, etc.
 
-### Input
+#### `style.css`
 
-**app.component.ts**
+- Tailwind-based global styles and component-specific CSS.
 
-```ts
-name = "";
-```
+## Getting Started
 
-**app.component.html**
+1. **Clone the repository**
 
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   ng serve
+   ```
+
+4. Open your browser at [http://localhost:4200](http://localhost:4200)
+
+## Using this template in your project
+- Go through this project and let me know if you have questions.
+- Copy and paste the assets folder into your project.
+- Copy and paste the tailwind.config.js into your project.
+- Copy and paste the styles.css into your project.
+- if you want to turn it from ltr (english) to rtl (arabic) then in index.html give the html tage a property called dir="rtl".
 ```html
-<app-input label="Name" type="text" [value]="name" (valueChange)="name = $event" customClass="w-64" />
-```
-
----
-
-### Textarea
-
-**app.component.ts**
-
-```ts
-comment = "";
-```
-
-**app.component.html**
-
-```html
-<app-textarea label="Comment" placeholder="Write here..." [value]="comment" (valueChange)="comment = $event" customClass="w-96" />
-```
-
----
-
-### Dropdown
-
-**app.component.ts**
-
-```ts
-dropdownOptions = ["One", "Two", "Three"];
-selectedOption = "";
-```
-
-**app.component.html**
-
-```html
-<app-dropdown label="Select Option" [options]="dropdownOptions" [value]="selectedOption" (valueChange)="selectedOption = $event" customClass="w-64" />
-```
-
----
-
-### Radio Group
-
-**app.component.ts**
-
-```ts
-radioOptions = ["Male", "Female"];
-gender = "";
-```
-
-**app.component.html**
-
-```html
-<app-radio [options]="radioOptions" [value]="gender" (valueChange)="gender = $event" customClass="w-64" />
-```
-
----
-
-### Checkbox
-
-**app.component.ts**
-
-```ts
-accepted = false;
-```
-
-**app.component.html**
-
-```html
-<app-checkbox label="Accept Terms" [checked]="accepted" (checkedChange)="accepted = $event" />
-```
-
----
-
-### Toggle
-
-**app.component.ts**
-
-```ts
-notifications = false;
-```
-
-**app.component.html**
-
-```html
-<app-toggle [enabled]="notifications" (enabledChange)="notifications = $event" />
-```
-
----
-
-### Date Picker
-
-**app.component.ts**
-
-```ts
-dob = "";
-```
-
-**app.component.html**
-
-```html
-<app-date-picker [value]="dob" (valueChange)="dob = $event" />
-```
-
----
-
-### Time Picker
-
-**app.component.ts**
-
-```ts
-startTime = "";
-```
-
-**app.component.html**
-
-```html
-<app-time-picker [value]="startTime" (valueChange)="startTime = $event" />
-```
-
----
-
-### Data Table
-
-**app.component.ts**
-
-```ts
-tableHeaders = ["Name", "Age"];
-tableRows = [
-  ["Alice", "30"],
-  ["Bob", "25"],
-];
-```
-
-**app.component.html**
-
-```html
-<app-table [headers]="tableHeaders" [rows]="tableRows" />
-```
-
----
-
-### Grid
-
-**app.component.ts**
-
-```ts
-gridItems = ["Card 1", "Card 2", "Card 3"];
-```
-
-**app.component.html**
-
-```html
-<app-grid [items]="gridItems" />
-```
-
----
-
-### Card
-
-```html
-<app-card title="Dashboard">
-  <p>Welcome to the card content slot!</p>
-</app-card>
-```
-
----
-
-### Button
-
-```html
-<app-button label="Submit" type="button" />
+<html lang="ar" dir="rtl">
 ```
