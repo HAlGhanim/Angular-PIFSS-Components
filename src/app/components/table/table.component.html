@@ -1,6 +1,6 @@
-<table class="table-auto border border-gray-300" [ngClass]="customClass">
+<table class="table-auto border border-gray-300" [ngClass]="customClass()">
   <thead>
-    <tr class="bg-gray-100" [ngClass]="customClass">
+    <tr class="text-slate-400" [ngClass]="customClass()">
       @for(header of headers(); track header){
       <th class="px-4 py-2 border">
         {{ header }}
@@ -12,7 +12,7 @@
     @for(row of rows(); track row){
     <tr>
       @for(cell of row; track cell){
-      <td class="px-4 py-2 border" [ngClass]="customClass">{{ cell }}</td>
+      <td class="px-4 py-2 border" [ngClass]="customClass()">{{ cell }}</td>
       }
     </tr>
     }

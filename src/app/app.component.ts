@@ -52,11 +52,11 @@ export class AppComponent {
   dropdownOptions = ['Option 1', 'Option 2', 'Option 3'];
   radioOptions = ['Male', 'Female'];
 
-  tableHeaders = ['Name', 'Age', 'Role'];
+  tableHeaders = ['الاسم', 'العمر', 'الوظيفة'];
   tableRows = [
-    ['Alice', '30', 'Developer'],
-    ['Bob', '25', 'Designer'],
-    ['Charlie', '35', 'Manager'],
+    ['علياء', '30', 'مُطوّرة برمجيات'],
+    ['باسل', '25', 'مصمم'],
+    ['كريم', '35', 'مدير'],
   ];
 
   gridItems = ['Box 1', 'Box 2', 'Box 3', 'Box 4'];
