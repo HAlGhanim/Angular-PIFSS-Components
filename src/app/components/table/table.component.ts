@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -8,21 +8,7 @@ import { Component, Input, signal } from '@angular/core';
   templateUrl: './table.component.html',
 })
 export class TableComponent {
-  @Input() customClass: string | string[] = '';
-  @Input() set headers(value: string[]) {
-    this._headers.set(value);
-  }
-  @Input() set rows(value: string[][]) {
-    this._rows.set(value);
-  }
-
-  private _headers = signal<string[]>([]);
-  private _rows = signal<string[][]>([]);
-
-  get headers() {
-    return this._headers();
-  }
-  get rows() {
-    return this._rows();
-  }
+  customClass = input<string | string[]>('');
+  headers = input<string[]>([]);
+  rows = input<string[][]>([]);
 }

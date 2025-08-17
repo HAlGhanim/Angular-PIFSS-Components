@@ -1,9 +1,9 @@
 <div
   class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-  [ngClass]="customClass"
+  [ngClass]="customClass()"
 >
-  @for(item of items; track item){
-  <div class="p-4 border rounded shadow" [ngClass]="customClass">
+  @for(item of items(); track item){
+  <div class="p-4 border rounded shadow" [ngClass]="customClass()">
     {{ item }}
   </div>
   }

@@ -1,4 +1,7 @@
-<nav class="w-full shadow p-4 flex justify-between items-center">
+<nav
+  class="w-full shadow p-4 flex justify-between items-center"
+  [ngClass]="customClass()"
+>
   <div class="space-x-4">
     @for (link of links; track link.label) {
     <a

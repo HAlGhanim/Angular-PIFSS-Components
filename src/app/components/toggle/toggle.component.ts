@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-toggle',
@@ -8,23 +8,12 @@ import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
   templateUrl: './toggle.component.html',
 })
 export class ToggleComponent {
-  private _enabled = signal(false);
+  enabled = input<boolean>(false);
+  customClass = input<string | string[]>('');
 
-  @Input() set enabled(val: boolean) {
-    this._enabled.set(val);
-  }
-  get enabled() {
-    return this._enabled();
-  }
-
-  @Output() enabledChange = new EventEmitter<boolean>();
-  @Input() customClass: string | string[] = '';
+  enabledChange = output<boolean>();
 
   toggle() {
-    this._enabled.update((val) => {
-      const newVal = !val;
-      this.enabledChange.emit(newVal);
-      return newVal;
-    });
+    this.enabledChange.emit(!this.enabled());
   }
 }

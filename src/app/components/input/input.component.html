@@ -1,9 +1,9 @@
-<label class="block text-sm font-medium mb-1">{{ label }}</label>
+<label class="block text-sm font-medium mb-1">{{ label() }}</label>
 <input
-  [type]="type"
-  [placeholder]="placeholder"
-  [value]="value"
+  [type]="type()"
+  [placeholder]="placeholder()"
+  [value]="value()"
   (input)="updateValue($event)"
   class="px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-primary"
-  [ngClass]="customClass"
+  [ngClass]="customClass()"
 />

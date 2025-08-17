@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PifssLogoComponent } from '../icons/pifss-logo/pifss-logo.component';
 import { PifssLogoHComponent } from '../icons/pifss-logo-h/pifss-logo-h.component';
@@ -8,17 +8,11 @@ import { PifssLogoVComponent } from '../icons/pifss-logo-v/pifss-logo-v.componen
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    PifssLogoComponent,
-    PifssLogoHComponent,
-    PifssLogoVComponent,
-  ],
+  imports: [CommonModule, RouterModule, PifssLogoComponent],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  @Input() customClass: string | string[] = '';
+  customClass = input<string | string[]>('');
 
   // Change this based on your project
   links = [

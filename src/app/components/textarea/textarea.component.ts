@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-textarea',
@@ -8,38 +8,15 @@ import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
   templateUrl: './textarea.component.html',
 })
 export class TextareaComponent {
-  private _label = signal('');
-  private _placeholder = signal('');
-  private _value = signal('');
+  label = input<string>('');
+  placeholder = input<string>('');
+  value = input<string>('');
+  customClass = input<string | string[]>('');
 
-  @Input() set label(value: string) {
-    this._label.set(value);
-  }
-  get label() {
-    return this._label();
-  }
-
-  @Input() set placeholder(value: string) {
-    this._placeholder.set(value);
-  }
-  get placeholder() {
-    return this._placeholder();
-  }
-
-  @Input() set value(val: string) {
-    this._value.set(val);
-  }
-  get value() {
-    return this._value();
-  }
-
-  @Output() valueChange = new EventEmitter<string>();
-
-  @Input() customClass: string | string[] = '';
+  valueChange = output<string>();
 
   updateValue(event: Event) {
     const newVal = (event.target as HTMLTextAreaElement).value;
-    this._value.set(newVal);
     this.valueChange.emit(newVal);
   }
 }
